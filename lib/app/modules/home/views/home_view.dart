@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_app/app/controllers/indexcontroller_controller.dart';
 import 'package:gym_app/app/modules/home/views/widget/jenis_olahraga.dart';
-
+import 'package:gym_app/app/routes/app_pages.dart';
 import '../controllers/home_controller.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomeView extends GetView<HomeController> {
   HomeView({Key? key}) : super(key: key);
@@ -72,16 +73,50 @@ class HomeView extends GetView<HomeController> {
                   color: Colors.grey,
                   fontSize: 20),
             ),
-            Container(
-              width: Get.height,
-              height: Get.width,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () => Get.toNamed(Routes.DETAIL_BANNER),
+                child: StaggeredGrid.count(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 5,
+                  crossAxisSpacing: 4,
                   children: [
-                    JenisOlahragaContainer(),
-                    JenisOlahragaContainer(),
-                    JenisOlahragaContainer(),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 3,
+                      mainAxisCellCount: 3,
+                      child: JenisOlahragaContainer(),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 3,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [
+                            Color(0xFF38474C),
+                            Color(0xFF0E7D77),
+                          ]),
+                        ),
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 3,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [
+                            Color(0xFF38474C),
+                            Color(0xFF0E7D77),
+                          ]),
+                        ),
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 3,
+                      mainAxisCellCount: 3,
+                      child: JenisOlahragaContainer(),
+                    ),
                   ],
                 ),
               ),
