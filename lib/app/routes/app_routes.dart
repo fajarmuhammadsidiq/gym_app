@@ -9,6 +9,7 @@ abstract class Routes {
   static const STREAMING_PAGE = _Paths.STREAMING_PAGE;
   static const ARTICLE_PAGE = _Paths.ARTICLE_PAGE;
   static const DETAIL_ARTICLE = _Paths.DETAIL_ARTICLE;
+  static const DETAIL_BANNER = _Paths.DETAIL_BANNER;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const STREAMING_PAGE = '/streaming-page';
   static const ARTICLE_PAGE = '/article-page';
   static const DETAIL_ARTICLE = '/detail-article';
+  static const DETAIL_BANNER = '/detail-banner';
 }

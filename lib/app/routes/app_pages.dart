@@ -4,6 +4,8 @@ import '../modules/articlePage/bindings/article_page_binding.dart';
 import '../modules/articlePage/views/article_page_view.dart';
 import '../modules/detailArticle/bindings/detail_article_binding.dart';
 import '../modules/detailArticle/views/detail_article_view.dart';
+import '../modules/detailBanner/bindings/detail_banner_binding.dart';
+import '../modules/detailBanner/views/detail_banner_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/intro/bindings/intro_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.DETAIL_ARTICLE,
       page: () => DetailArticleView(),
       binding: DetailArticleBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_BANNER,
+      page: () => const DetailBannerView(),
+      binding: DetailBannerBinding(),
     ),
   ];
 }

@@ -98,10 +98,9 @@ class _StreamingPageViewState extends State<StreamingPageView> {
                   child: Stack(fit: StackFit.expand, children: [
                     Container(
                       margin: EdgeInsets.symmetric(vertical: 10),
-                      alignment: Alignment.bottomCenter,
+                      alignment: Alignment.topCenter,
                       height: 220.0,
                       decoration: const BoxDecoration(
-                        color: Colors.green,
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
                       child: ClipRRect(
