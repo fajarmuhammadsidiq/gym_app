@@ -28,7 +28,7 @@ class _ArticlePageViewState extends State<ArticlePageView> {
             padding: EdgeInsets.all(10),
             height: 50,
             width: Get.width,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [Colors.white, Colors.red]),
             ),
             child: Center(
@@ -42,12 +42,12 @@ class _ArticlePageViewState extends State<ArticlePageView> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           FutureBuilder(
               future: controller.articleFuture(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 }
@@ -67,23 +67,23 @@ class _ArticlePageViewState extends State<ArticlePageView> {
                   ),
                   child: Container(
                       width: Get.width,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           gradient: LinearGradient(
                               colors: [Colors.white, Colors.red])),
                       child: Text("${data1.title} diambil dari CNN")),
                 );
               }),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           FutureBuilder(
             future: controller.articleFuture(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
               return ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 itemCount: snapshot.data?.data?.posts?.length,
@@ -110,7 +110,7 @@ class _ArticlePageViewState extends State<ArticlePageView> {
                           width: Get.width,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              gradient: LinearGradient(colors: [
+                              gradient: const LinearGradient(colors: [
                                 Colors.white,
                                 Colors.red,
                               ])),
@@ -130,7 +130,7 @@ class _ArticlePageViewState extends State<ArticlePageView> {
           unselectedItemColor: Colors.grey,
           currentIndex: indexC.pageIndex.value,
           onTap: (int i) => indexC.indexPage(i),
-          items: [
+          items: const [
             BottomNavigationBarItem(icon: Icon(Icons.dashboard), label: "home"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle_outlined), label: "profile"),
